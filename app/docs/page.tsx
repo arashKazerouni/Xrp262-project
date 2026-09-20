@@ -68,7 +68,7 @@ export default function DocumentationPage() {
           </a>
           <nav className="hidden items-center gap-7 font-mono text-[10px] tracking-wider text-slate-500 md:flex">
             <a href="/" className="transition hover:text-white">HOME</a>
-            <a href="/protocol.pdf" className="transition hover:text-white">PROTOCOL</a>
+            <a href="/protocol" className="transition hover:text-white">PROTOCOL</a>
             <a href="/supply" className="transition hover:text-white">SUPPLY</a>
             <a href="/lexora" className="transition hover:text-white">LEXORA</a>
             <a href="/verify" className="transition hover:text-white">VERIFY</a>
@@ -245,7 +245,7 @@ export default function DocumentationPage() {
             <div className="font-mono text-[9px] tracking-widest text-blue-400">VERIFICATION SURFACE</div>
             <div className="mt-2 text-sm text-slate-200">Open the complete mainnet verification page →</div>
           </a>
-          <a href="/protocol.pdf" className="rounded-lg border border-slate-800 bg-slate-950/40 p-5 transition hover:border-blue-500/35">
+          <a href="/protocol" className="rounded-lg border border-slate-800 bg-slate-950/40 p-5 transition hover:border-blue-500/35">
             <div className="font-mono text-[9px] tracking-widest text-blue-400">FORMAL DOSSIER</div>
             <div className="mt-2 text-sm text-slate-200">Read the protocol architecture PDF →</div>
           </a>
@@ -277,7 +277,7 @@ export default function DocumentationPage() {
           </div>
           <div className="flex flex-wrap gap-5 font-mono text-[10px] text-slate-600">
             <a href="/" className="transition hover:text-blue-300">Home</a>
-            <a href="/protocol.pdf" className="transition hover:text-blue-300">Protocol</a>
+            <a href="/protocol" className="transition hover:text-blue-300">Protocol</a>
             <a href="/supply" className="transition hover:text-blue-300">Supply</a>
             <a href="/lexora" className="transition hover:text-blue-300">LEXORA</a>
             <a href="/verify" className="transition hover:text-blue-300">Verify</a>
