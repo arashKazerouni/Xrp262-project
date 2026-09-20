@@ -77,8 +77,8 @@ export default function Home() {
 
       <header className="glass sticky top-0 z-50 border-x-0 border-t-0">
         <div className="mx-auto flex h-16 max-w-[1280px] items-center justify-between px-4 sm:px-6 lg:px-8">
-          <a href="#" className="flex items-center gap-3">
-            <span className="flex h-8 w-8 items-center justify-center border border-blue-500/40 bg-blue-500/10 font-mono text-sm font-bold text-blue-300">X2</span>
+          <a href="#" className="flex items-center gap-3" aria-label="XRP262 home">
+            <img src="/primary-logo.png" alt="XRP262" className="h-9 w-9 object-contain" />
             <span className="text-sm font-semibold tracking-[0.14em]">XRP262</span>
           </a>
           <nav className="hidden items-center gap-7 text-xs text-slate-400 md:flex">
@@ -93,6 +93,13 @@ export default function Home() {
 
       <section className="mx-auto grid min-h-[720px] max-w-[1280px] items-center gap-16 px-4 py-24 sm:px-6 lg:grid-cols-[1.02fr_.98fr] lg:px-8 lg:py-28">
         <div>
+          <div className="mb-8 flex items-center">
+            <img
+              src="/primary-logo.png"
+              alt="XRP262 primary logo"
+              className="h-20 w-20 object-contain drop-shadow-[0_0_28px_rgba(59,130,246,.22)] sm:h-24 sm:w-24"
+            />
+          </div>
           <SectionLabel>STELLAR INFRASTRUCTURE PROTOCOL</SectionLabel>
           <h1 className="max-w-3xl text-5xl font-semibold tracking-[-0.055em] text-white sm:text-6xl lg:text-[76px] lg:leading-[.94]">
             XRP<span className="text-blue-400">262</span>
@@ -245,9 +252,22 @@ export default function Home() {
       </section>
 
       <footer className="border-t border-slate-900">
-        <div className="mx-auto flex max-w-[1280px] flex-col gap-5 px-4 py-10 sm:px-6 md:flex-row md:items-center md:justify-between lg:px-8">
-          <div><div className="font-mono text-xs tracking-[0.16em]">XRP262</div><div className="mt-2 text-xs text-slate-600">Stellar-native asset infrastructure.</div></div>
-          <div className="font-mono text-[10px] text-slate-600">PUBLIC NETWORK · SOROBAN · MAINNET</div>
+        <div className="mx-auto flex max-w-[1280px] flex-col gap-8 px-4 py-12 sm:px-6 md:flex-row md:items-center md:justify-between lg:px-8">
+          <div className="flex items-center gap-4">
+            <img
+              src="/primary-logo.png"
+              alt="XRP262 primary logo"
+              className="h-12 w-12 object-contain drop-shadow-[0_0_22px_rgba(59,130,246,.18)]"
+            />
+            <div>
+              <div className="font-mono text-xs tracking-[0.16em]">XRP262</div>
+              <div className="mt-2 text-xs text-slate-600">Stellar-native asset infrastructure.</div>
+            </div>
+          </div>
+          <div className="flex flex-col items-start gap-2 font-mono text-[10px] text-slate-600 md:items-end">
+            <span className="tracking-[0.18em] text-blue-400">POWERED BY LEXORA</span>
+            <span>PUBLIC NETWORK · SOROBAN · MAINNET</span>
+          </div>
         </div>
       </footer>
     </main>
