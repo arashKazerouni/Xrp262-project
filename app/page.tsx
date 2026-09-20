@@ -78,7 +78,7 @@ export default function Home() {
       <header className="glass sticky top-0 z-50 border-x-0 border-t-0">
         <div className="mx-auto flex h-16 max-w-[1280px] items-center justify-between px-4 sm:px-6 lg:px-8">
           <a href="#" className="flex items-center gap-3" aria-label="XRP262 home">
-            <img src="/primary-logo.png" alt="XRP262" className="h-9 w-9 object-contain" />
+            <img src="/logo.png" alt="XRP262" className="h-9 w-9 object-contain" />
             <span className="text-sm font-semibold tracking-[0.14em]">XRP262</span>
           </a>
           <nav className="hidden items-center gap-7 text-xs text-slate-400 md:flex">
@@ -97,7 +97,7 @@ export default function Home() {
             <img
               src="/primary-logo.png"
               alt="XRP262 primary logo"
-              className="h-20 w-20 object-contain drop-shadow-[0_0_28px_rgba(59,130,246,.22)] sm:h-24 sm:w-24"
+              className="h-28 w-28 object-contain drop-shadow-[0_0_32px_rgba(59,130,246,.24)] sm:h-36 sm:w-36"
             />
           </div>
           <SectionLabel>STELLAR INFRASTRUCTURE PROTOCOL</SectionLabel>
@@ -255,9 +255,9 @@ export default function Home() {
         <div className="mx-auto flex max-w-[1280px] flex-col gap-8 px-4 py-12 sm:px-6 md:flex-row md:items-center md:justify-between lg:px-8">
           <div className="flex items-center gap-4">
             <img
-              src="/primary-logo.png"
-              alt="XRP262 primary logo"
-              className="h-12 w-12 object-contain drop-shadow-[0_0_22px_rgba(59,130,246,.18)]"
+              src="/logo.png"
+              alt="XRP262 logo"
+              className="h-12 w-12 object-contain"
             />
             <div>
               <div className="font-mono text-xs tracking-[0.16em]">XRP262</div>
