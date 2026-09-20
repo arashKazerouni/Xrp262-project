@@ -11,8 +11,7 @@
   "dependencies": {
     "next": "16.3.4",
     "react": "19.2.8",
-    "react-dom": "19.2.8",
-    "@stellar/stellar-sdk": "^17.1.0"
+    "react-dom": "19.2.8"
   },
   "devDependencies": {
     "@tailwindcss/postcss": "^4.1.13",
@@ -23,8 +22,5 @@
     "eslint-config-next": "16.3.4",
     "tailwindcss": "^4.1.13",
     "typescript": "^5.9.0"
-  },
-  "engines": {
-    "node": ">=22.12.0"
   }
 }
