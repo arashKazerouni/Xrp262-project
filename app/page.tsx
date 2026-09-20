@@ -82,7 +82,7 @@ export default function Home() {
             <span className="text-sm font-semibold tracking-[0.14em]">XRP262</span>
           </a>
           <nav className="hidden items-center gap-7 text-xs text-slate-400 md:flex">
-            <a href="/protocol" className="transition hover:text-white">Protocol</a>
+            <a href="/protocol.pdf" className="transition hover:text-white">Protocol</a>
             <a href="#state" className="transition hover:text-white">State</a>
             <a href="#supply" className="transition hover:text-white">Supply</a>
             <a href="#verification" className="transition hover:text-white">Verification</a>
@@ -106,7 +106,7 @@ export default function Home() {
             transparent verification across Stellar Core and Soroban.
           </p>
           <div className="mt-9 flex flex-wrap gap-3">
-            <a href="/protocol" className="rounded-md bg-blue-600 px-5 py-3 text-sm font-medium text-white shadow-[0_0_32px_rgba(37,99,235,.22)] transition hover:bg-blue-500">Explore protocol</a>
+            <a href="/protocol.pdf" className="rounded-md bg-blue-600 px-5 py-3 text-sm font-medium text-white shadow-[0_0_32px_rgba(37,99,235,.22)] transition hover:bg-blue-500">Explore protocol</a>
             <a href="#verification" className="rounded-md border border-slate-700 bg-slate-950/50 px-5 py-3 text-sm font-medium text-slate-300 transition hover:border-blue-500/50 hover:text-white">Verify on-chain</a>
             <a href="https://stellar.expert/explorer/public/asset/XRP262-GCGVZEE7RD2BFF2EIQUT37DYJUR7WDCQ2KWA5LUWYATRFLKEYHMJ3XRP-2" target="_blank" rel="noreferrer" className="rounded-md border border-blue-500/30 bg-blue-500/[0.06] px-5 py-3 text-sm font-medium text-blue-300 transition hover:border-blue-400/60 hover:bg-blue-500/[0.1] hover:text-blue-200">View asset on StellarExpert ↗</a>
           </div>
@@ -259,7 +259,7 @@ export default function Home() {
             </div>
           </div>
           <div className="flex flex-wrap gap-5 font-mono text-[10px] text-slate-600 md:items-end md:justify-end">
-            <a href="/protocol" className="transition hover:text-blue-300">Protocol</a>
+            <a href="/protocol.pdf" className="transition hover:text-blue-300">Protocol</a>
             <a href="/supply" className="transition hover:text-blue-300">Supply</a>
             <a href="/lexora" className="transition hover:text-blue-300">LEXORA</a>
             <a href="/verify" className="transition hover:text-blue-300">Verify</a>
