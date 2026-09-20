@@ -83,26 +83,7 @@ function Arrow() {
 export default function Home() {
   return (
     <main className="relative overflow-hidden">
-      <div className="grid-bg pointer-events-none absolute inset-x-0 top-0 h-[980px]" />
-
-      <header className="glass sticky top-0 z-50 border-x-0 border-t-0">
-        <div className="mx-auto flex h-16 max-w-[1280px] items-center justify-between px-4 sm:px-6 lg:px-8">
-          <a href="/" className="flex items-center gap-3" aria-label="XRP262 home">
-            <img src="/logo.png" alt="XRP262" className="h-9 w-9 object-contain" />
-            <span className="text-sm font-semibold tracking-[0.14em]">XRP262</span>
-          </a>
-          <nav className="hidden items-center gap-6 font-mono text-[10px] tracking-wider text-slate-500 md:flex">
-            <a href="/protocol" className="transition hover:text-white">PROTOCOL</a>
-            <a href="/docs.pdf" className="transition hover:text-white">DOCS</a>
-            <a href="/supply" className="transition hover:text-white">SUPPLY</a>
-            <a href="/lexora" className="transition hover:text-white">LEXORA</a>
-            <a href="/verify" className="transition hover:text-white">VERIFY</a>
-          </nav>
-          <NetworkStatus />
-        </div>
-      </header>
-
-      <section className="relative">
+      <div className="grid-bg pointer-events-none absolute inset-x-0 top-0 h-[980px]" /><section className="relative">
         <div className="mx-auto grid min-h-[760px] max-w-[1280px] items-center gap-16 px-4 py-24 sm:px-6 lg:grid-cols-[1.03fr_.97fr] lg:px-8 lg:py-28">
           <div>
             <div className="mb-5 inline-flex items-center gap-2 rounded-full border border-blue-500/20 bg-blue-500/[0.045] px-3 py-1.5 font-mono text-[9px] tracking-[0.18em] text-blue-300">
