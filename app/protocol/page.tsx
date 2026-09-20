@@ -74,37 +74,7 @@ function TxLink({ hash }: { hash: string }) {
 
 export default function ProtocolPage() {
   return (
-    <main className="min-h-screen overflow-hidden">
-      <header className="glass sticky top-0 z-50 border-x-0 border-t-0">
-        <div className="mx-auto flex h-16 max-w-[1280px] items-center justify-between px-4 sm:px-6 lg:px-8">
-          <a href="/" className="flex items-center gap-3" aria-label="XRP262 home">
-            <img src="/logo.png" alt="XRP262" className="h-9 w-9 object-contain" />
-            <span className="text-sm font-semibold tracking-[0.14em]">XRP262</span>
-          </a>
-          <nav className="hidden items-center gap-7 font-mono text-[10px] tracking-wider text-slate-500 md:flex">
-            <a href="/" className="transition hover:text-white">OVERVIEW</a>
-            <a href="/protocol" className="text-blue-300">PROTOCOL</a>
-            <a href="/supply" className="transition hover:text-white">SUPPLY</a>
-            <a href="/lexora" className="transition hover:text-white">LEXORA</a>
-            <a href="/verify" className="transition hover:text-white">VERIFY</a>
-          </nav>
-          <div className="flex items-center gap-2">
-            <span className="hidden rounded-full border border-blue-500/20 bg-blue-500/[0.05] px-3 py-1.5 font-mono text-[9px] tracking-[0.14em] text-blue-300 sm:inline-flex">
-              MAINNET / ACTIVE
-            </span>
-            <a
-              href="/protocol.pdf"
-              target="_blank"
-              rel="noreferrer"
-              className="rounded-full border border-slate-700 bg-slate-950/60 px-3 py-1.5 font-mono text-[9px] tracking-[0.12em] text-slate-300 transition hover:border-blue-500/50 hover:text-white"
-            >
-              PDF ↗
-            </a>
-          </div>
-        </div>
-      </header>
-
-      <section className="relative border-b border-slate-900">
+    <main className="min-h-screen overflow-hidden"><section className="relative border-b border-slate-900">
         <div className="grid-bg pointer-events-none absolute inset-x-0 top-0 h-[780px] opacity-60" />
         <div className="pointer-events-none absolute right-[-12rem] top-[-8rem] h-[34rem] w-[34rem] rounded-full bg-blue-600/[0.07] blur-3xl" />
 
