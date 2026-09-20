@@ -92,8 +92,8 @@ export default function Home() {
             <span className="text-sm font-semibold tracking-[0.14em]">XRP262</span>
           </a>
           <nav className="hidden items-center gap-6 font-mono text-[10px] tracking-wider text-slate-500 md:flex">
-            <a href="/protocol.pdf" className="transition hover:text-white">PROTOCOL</a>
-            <a href="/docs" className="transition hover:text-white">DOCS</a>
+            <a href="/protocol" className="transition hover:text-white">PROTOCOL</a>
+            <a href="/docs.pdf" className="transition hover:text-white">DOCS</a>
             <a href="/supply" className="transition hover:text-white">SUPPLY</a>
             <a href="/lexora" className="transition hover:text-white">LEXORA</a>
             <a href="/verify" className="transition hover:text-white">VERIFY</a>
@@ -126,7 +126,7 @@ export default function Home() {
               <a href="/verify" className="rounded-md bg-blue-600 px-5 py-3 text-sm font-medium text-white shadow-[0_0_36px_rgba(37,99,235,.24)] transition hover:bg-blue-500">
                 Verify XRP262
               </a>
-              <a href="/protocol.pdf" className="rounded-md border border-slate-700 bg-slate-950/50 px-5 py-3 text-sm font-medium text-slate-300 transition hover:border-blue-500/50 hover:text-white">
+              <a href="/protocol" className="rounded-md border border-slate-700 bg-slate-950/50 px-5 py-3 text-sm font-medium text-slate-300 transition hover:border-blue-500/50 hover:text-white">
                 Read protocol
               </a>
               <a
@@ -223,7 +223,7 @@ export default function Home() {
               interface. LEXORA adds an explicit controller and policy layer.
             </p>
           </div>
-          <a href="/docs" className="font-mono text-[10px] tracking-widest text-blue-400 transition hover:text-blue-300">
+          <a href="/docs.pdf" className="font-mono text-[10px] tracking-widest text-blue-400 transition hover:text-blue-300">
             READ TECHNICAL REFERENCE →
           </a>
         </div>
@@ -356,7 +356,7 @@ export default function Home() {
             </p>
             <div className="mt-7 flex flex-wrap gap-3">
               <a href="/verify" className="rounded-md bg-blue-600 px-5 py-3 text-sm font-medium text-white transition hover:bg-blue-500">Open verification</a>
-              <a href="/docs" className="rounded-md border border-slate-700 px-5 py-3 text-sm font-medium text-slate-300 transition hover:border-blue-500/50 hover:text-white">Technical docs</a>
+              <a href="/docs.pdf" className="rounded-md border border-slate-700 px-5 py-3 text-sm font-medium text-slate-300 transition hover:border-blue-500/50 hover:text-white">Technical docs</a>
             </div>
           </div>
           <div className="space-y-3">
@@ -392,8 +392,8 @@ export default function Home() {
                 </p>
               </div>
               <div className="flex flex-wrap gap-3">
-                <a href="/protocol.pdf" className="rounded-md bg-blue-600 px-5 py-3 text-sm font-medium text-white transition hover:bg-blue-500">Protocol PDF</a>
-                <a href="/docs" className="rounded-md border border-slate-700 px-5 py-3 text-sm font-medium text-slate-300 transition hover:border-blue-500/50 hover:text-white">Documentation</a>
+                <a href="/protocol" className="rounded-md bg-blue-600 px-5 py-3 text-sm font-medium text-white transition hover:bg-blue-500">Protocol PDF</a>
+                <a href="/docs.pdf" className="rounded-md border border-slate-700 px-5 py-3 text-sm font-medium text-slate-300 transition hover:border-blue-500/50 hover:text-white">Documentation</a>
               </div>
             </div>
           </div>
@@ -410,8 +410,8 @@ export default function Home() {
             </div>
           </div>
           <div className="flex flex-wrap gap-5 font-mono text-[10px] text-slate-600 md:items-end md:justify-end">
-            <a href="/protocol.pdf" className="transition hover:text-blue-300">Protocol</a>
-            <a href="/docs" className="transition hover:text-blue-300">Docs</a>
+            <a href="/protocol" className="transition hover:text-blue-300">Protocol</a>
+            <a href="/docs.pdf" className="transition hover:text-blue-300">Docs</a>
             <a href="/supply" className="transition hover:text-blue-300">Supply</a>
             <a href="/lexora" className="transition hover:text-blue-300">LEXORA</a>
             <a href="/verify" className="transition hover:text-blue-300">Verify</a>
