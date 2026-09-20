@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import AddressCopy from "./AddressCopy";
 
 export const metadata: Metadata = {
   title: "Documentation",
@@ -45,14 +46,7 @@ function AddressRow({ label, value }: { label: string; value: string }) {
   return (
     <div className="grid gap-3 border-b border-slate-900 bg-[#0b101b] p-5 last:border-b-0 md:grid-cols-[220px_1fr]">
       <div className="font-mono text-[9px] tracking-[0.16em] text-blue-400">{label}</div>
-      <button
-        type="button"
-        title="Copy address"
-        onClick={() => navigator.clipboard.writeText(value)}
-        className="break-all text-left font-mono text-[11px] leading-6 text-slate-400 transition hover:text-blue-300"
-      >
-        {value}
-      </button>
+      <AddressCopy value={value} />
     </div>
   );
 }
