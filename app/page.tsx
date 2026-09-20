@@ -93,13 +93,6 @@ export default function Home() {
 
       <section className="mx-auto grid min-h-[720px] max-w-[1280px] items-center gap-16 px-4 py-24 sm:px-6 lg:grid-cols-[1.02fr_.98fr] lg:px-8 lg:py-28">
         <div>
-          <div className="mb-8 flex items-center">
-            <img
-              src="/primary-logo.png"
-              alt="XRP262 primary logo"
-              className="h-28 w-28 object-contain drop-shadow-[0_0_32px_rgba(59,130,246,.24)] sm:h-36 sm:w-36"
-            />
-          </div>
           <SectionLabel>STELLAR INFRASTRUCTURE PROTOCOL</SectionLabel>
           <h1 className="max-w-3xl text-5xl font-semibold tracking-[-0.055em] text-white sm:text-6xl lg:text-[76px] lg:leading-[.94]">
             XRP<span className="text-blue-400">262</span>
@@ -115,6 +108,7 @@ export default function Home() {
           <div className="mt-9 flex flex-wrap gap-3">
             <a href="#architecture" className="rounded-md bg-blue-600 px-5 py-3 text-sm font-medium text-white shadow-[0_0_32px_rgba(37,99,235,.22)] transition hover:bg-blue-500">Explore protocol</a>
             <a href="#verification" className="rounded-md border border-slate-700 bg-slate-950/50 px-5 py-3 text-sm font-medium text-slate-300 transition hover:border-blue-500/50 hover:text-white">Verify on-chain</a>
+            <a href="https://stellar.expert/explorer/public/asset/XRP262-GCGVZEE7RD2BFF2EIQUT37DYJUR7WDCQ2KWA5LUWYATRFLKEYHMJ3XRP-2" target="_blank" rel="noreferrer" className="rounded-md border border-blue-500/30 bg-blue-500/[0.06] px-5 py-3 text-sm font-medium text-blue-300 transition hover:border-blue-400/60 hover:bg-blue-500/[0.1] hover:text-blue-200">View asset on StellarExpert ↗</a>
           </div>
           <div className="mt-12 grid max-w-xl grid-cols-2 gap-6 border-t border-slate-800/80 pt-6 sm:grid-cols-4">
             <div><div className="font-mono text-lg text-white">900B</div><div className="mt-1 text-[10px] uppercase tracking-widest text-slate-600">Max supply</div></div>
