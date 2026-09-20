@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import "./globals.css";
+import SiteHeader from "@/components/layout/SiteHeader";
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://xrp262.com"),
@@ -48,7 +49,7 @@ export default function RootLayout({
 }: Readonly<{ children: React.ReactNode }>) {
   return (
     <html lang="en">
-      <body>{children}</body>
+      <body><SiteHeader />{children}</body>
     </html>
   );
 }
