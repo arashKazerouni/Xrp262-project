@@ -42,21 +42,20 @@ function Label({ children }: { children: React.ReactNode }) {
 
 function CopyAddress({ value }: { value: string }) {
   return (
-    <button
-      type="button"
-      title={value}
-      onClick={async () => {
-        await navigator.clipboard.writeText(value);
-      }}
+    <a
+      href={`https://stellar.expert/explorer/public/contract/${value}`}
+      title="Open on StellarExpert"
+      target="_blank"
+      rel="noreferrer"
       className="group flex min-w-0 items-center gap-3 text-left"
     >
       <span className="truncate font-mono text-[10px] text-slate-500 transition group-hover:text-blue-300">
         {value}
       </span>
       <span className="shrink-0 font-mono text-[9px] tracking-widest text-slate-700 transition group-hover:text-blue-400">
-        COPY
+        INSPECT ↗
       </span>
-    </button>
+    </a>
   );
 }
 
