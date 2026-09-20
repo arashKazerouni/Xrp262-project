@@ -6,14 +6,35 @@ const LEXORA = "CAJL2JO6EILWBTHDRMIQVJA6MTZIUWHOD6WNVJDN7FWTYD6H3NFXH542";
 const SAC = "CC7L34EWYCTDCA3L7CRRULWX577UJWET32KNJFD2WTEQ4KD7IAUKHIS6";
 const ISSUER = "GCGVZEE7RD2BFF2EIQUT37DYJUR7WDCQ2KWA5LUWYATRFLKEYHMJ3XRP";
 
-const state = {
-  maxSupply: "900,000,000,000",
-  minted: "900,000,000,000",
-  burned: "426,026,808",
-  circulating: "899,573,973,192",
-  registry: "ACTIVE",
-  allowed: true,
+type ProtocolState = {
+  ok: boolean;
+  latestLedger: number;
+  checkedAt: string;
+  registryStatus: string;
+  allowed: boolean;
+  configuredSac: string;
+  sacAdmin: string;
+  policy: {
+    max_supply: string;
+    minted: string;
+    burned: string;
+    circulating: string;
+    minting_enabled: boolean;
+    clawback_enabled: boolean;
+    paused: boolean;
+  };
+  balances: { lexora: string; distribution: string };
 };
+
+function formatTokens(raw: string | undefined, rawMode: boolean) {
+  if (!raw) return "—";
+  const value = BigInt(raw);
+  return rawMode ? value.toLocaleString("en-US") : (value / 10_000_000n).toLocaleString("en-US");
+}
+
+function shortenAddress(value: string) {
+  return value.length > 18 ? `${value.slice(0, 8)}…${value.slice(-8)}` : value;
+}
 
 function CopyAddress({ value }: { value: string }) {
   const [copied, setCopied] = useState(false);
@@ -87,6 +108,31 @@ function Arrow() {
 }
 
 export default function Home() {
+  const [protocol, setProtocol] = useState<ProtocolState | null>(null);
+  const [rawMode, setRawMode] = useState(false);
+
+  useEffect(() => {
+    let mounted = true;
+    const read = async () => {
+      try {
+        const response = await fetch("/api/protocol", { cache: "no-store" });
+        const data = await response.json();
+        if (mounted && data.ok) setProtocol(data);
+      } catch {
+        // Keep the last successful mainnet snapshot visible.
+      }
+    };
+    read();
+    const id = setInterval(read, 15000);
+    return () => {
+      mounted = false;
+      clearInterval(id);
+    };
+  }, []);
+
+  const live = Boolean(protocol?.ok);
+  const p = protocol?.policy;
+
   return (
     <main className="relative overflow-hidden">
       <div className="grid-bg pointer-events-none absolute inset-x-0 top-0 h-[900px]" />
@@ -155,25 +201,25 @@ export default function Home() {
           </div>
           <div className="mt-12 grid max-w-xl grid-cols-2 gap-6 border-t border-slate-800/80 pt-6 sm:grid-cols-4">
             <div>
-              <div className="font-mono text-lg text-white">900B</div>
+              <div className="font-mono text-lg text-white">{p ? formatTokens(p.max_supply, false) : "—"}</div>
               <div className="mt-1 text-[10px] uppercase tracking-widest text-slate-600">
                 Max supply
               </div>
             </div>
             <div>
-              <div className="font-mono text-lg text-white">899.57B</div>
+              <div className="font-mono text-lg text-white">{p ? formatTokens(p.circulating, false) : "—"}</div>
               <div className="mt-1 text-[10px] uppercase tracking-widest text-slate-600">
                 Circulating
               </div>
             </div>
             <div>
-              <div className="font-mono text-lg text-white">ACTIVE</div>
+              <div className="font-mono text-lg text-white">{protocol?.registryStatus?.toUpperCase() ?? "—"}</div>
               <div className="mt-1 text-[10px] uppercase tracking-widest text-slate-600">
                 Registry
               </div>
             </div>
             <div>
-              <div className="font-mono text-lg text-white">SAC</div>
+              <div className="font-mono text-lg text-white">{protocol ? "SAC" : "—"}</div>
               <div className="mt-1 text-[10px] uppercase tracking-widest text-slate-600">
                 Asset layer
               </div>
@@ -186,11 +232,11 @@ export default function Home() {
           <div className="card blue-line relative rounded-xl p-5 sm:p-7">
             <div className="mb-7 flex items-center justify-between">
               <div className="font-mono text-[10px] tracking-[0.18em] text-slate-500">
-                LIVE ARCHITECTURE SIGNAL
+                MAINNET ARCHITECTURE SIGNAL
               </div>
               <div className="flex items-center gap-2 font-mono text-[9px] text-blue-400">
                 <span className="h-1.5 w-1.5 rounded-full bg-blue-400 pulse" />{" "}
-                VERIFIED MODEL
+                {live ? "LIVE FROM MAINNET" : "CONNECTING"}
               </div>
             </div>
             {[
@@ -286,23 +332,26 @@ export default function Home() {
               Protocol telemetry.
             </h2>
             <p className="mt-4 text-sm text-slate-500">
-              Genesis state verified against XRP262 mainnet control records.
+              Read directly from XRP262 protocol state through Stellar Mainnet RPC.
             </p>
           </div>
-          <span className="font-mono text-[10px] text-slate-600">
-            PRECISION / STANDARD
-          </span>
+          <div className="flex items-center gap-2">
+            <span className="font-mono text-[10px] text-slate-600">PRECISION</span>
+            <button onClick={() => setRawMode(false)} className={`rounded border px-2 py-1 font-mono text-[9px] ${!rawMode ? "border-blue-500/40 bg-blue-500/10 text-blue-300" : "border-slate-800 text-slate-600"}`}>STANDARD</button>
+            <button onClick={() => setRawMode(true)} className={`rounded border px-2 py-1 font-mono text-[9px] ${rawMode ? "border-blue-500/40 bg-blue-500/10 text-blue-300" : "border-slate-800 text-slate-600"}`}>RAW STROOP</button>
+          </div>
         </div>
         <div className="mt-10 grid gap-3 sm:grid-cols-2 lg:grid-cols-4">
           {[
-            ["MAX SUPPLY", state.maxSupply, "XRP262"],
-            ["GENESIS MINTED", state.minted, "XRP262"],
-            ["TOTAL BURNED", state.burned, "XRP262"],
-            ["CIRCULATING", state.circulating, "XRP262"],
-            ["REGISTRY", state.registry, "TOKEN STATUS"],
-            ["ALLOWED", state.allowed ? "TRUE" : "FALSE", "LEXORA REGISTRY"],
-            ["SAC ADMIN", "LEXORA", "CONTROLLER"],
-            ["LEXORA BALANCE", "0", "XRP262"],
+            ["MAX SUPPLY", formatTokens(p?.max_supply, rawMode), "XRP262"],
+            ["GENESIS MINTED", formatTokens(p?.minted, rawMode), "XRP262"],
+            ["TOTAL BURNED", formatTokens(p?.burned, rawMode), "XRP262"],
+            ["CIRCULATING", formatTokens(p?.circulating, rawMode), "XRP262"],
+            ["REGISTRY", protocol?.registryStatus?.toUpperCase() ?? "—", "TOKEN STATUS"],
+            ["ALLOWED", protocol ? (protocol.allowed ? "TRUE" : "FALSE") : "—", "LEXORA REGISTRY"],
+            ["SAC ADMIN", protocol ? shortenAddress(protocol.sacAdmin) : "—", "CONTROLLER"],
+            ["LEXORA BALANCE", formatTokens(protocol?.balances.lexora, rawMode), "XRP262"],
+            ["DISTRIBUTION", formatTokens(protocol?.balances.distribution, rawMode), "XRP262"],
           ].map(([label, value, unit]) => (
             <div key={label} className="card rounded-lg p-5">
               <div className="font-mono text-[9px] tracking-[0.16em] text-slate-600">
@@ -350,8 +399,9 @@ export default function Home() {
               )}
           </div>
           <div className="mt-8 rounded-lg border border-blue-500/20 bg-blue-500/[0.035] px-5 py-4 font-mono text-xs text-slate-400">
-            <span className="text-blue-400">INVARIANT</span> · Circulating =
+            <span className="text-blue-400">LIVE INVARIANT</span> · Circulating =
             Genesis Minted − Total Burned
+            {protocol && <span className="ml-3 text-slate-600">· READ LEDGER {protocol.latestLedger.toLocaleString()}</span>}
           </div>
         </div>
       </section>
