@@ -48,24 +48,7 @@ function SectionLabel({ children }: { children: React.ReactNode }) {
 export default function LexoraPage() {
   return (
     <main className="min-h-screen overflow-hidden">
-      <header className="glass sticky top-0 z-50 border-x-0 border-t-0">
-        <div className="mx-auto flex h-16 max-w-[1280px] items-center justify-between px-4 sm:px-6 lg:px-8">
-          <a href="/" className="flex items-center gap-3">
-            <img src="/logo.png" alt="XRP262" className="h-9 w-9 object-contain" />
-            <span className="text-sm font-semibold tracking-[0.14em]">XRP262</span>
-          </a>
-          <nav className="hidden items-center gap-7 font-mono text-[10px] tracking-wider text-slate-500 md:flex">
-            <a href="/" className="transition hover:text-white">HOME</a>
-            <a href="/protocol.pdf" className="transition hover:text-white">PROTOCOL</a>
-            <a href="/supply" className="transition hover:text-white">SUPPLY</a>
-            <span className="text-blue-400">LEXORA</span>
-            <a href="/verify" className="transition hover:text-white">VERIFY</a>
-          </nav>
-          <div className="flex items-center gap-2 rounded-full border border-blue-500/20 bg-blue-500/[0.05] px-3 py-1.5 font-mono text-[9px] tracking-[0.16em] text-blue-300">
-            <span className="h-1.5 w-1.5 rounded-full bg-blue-400 pulse" /> MAINNET / ACTIVE
-          </div>
-        </div>
-      </header>
+
 
       <section className="relative border-b border-slate-900">
         <div className="grid-bg pointer-events-none absolute inset-x-0 top-0 h-[760px]" />
