@@ -1,0 +1,33 @@
+# Stellar Asset Metadata
+# Asset: XRP262
+# Issuer: GCGVZEE7RD2BFF2EIQUT37DYJUR7WDCQ2KWA5LUWYATRFLKEYHMJ3XRP
+# Soroban Contract: CC7L34EWYCTDCA3L7CRRULWX577UJWET32KNJFD2WTEQ4KD7IAUKHIS6
+# Website: https://xrp-262.vercel.app
+
+VERSION="2.0.0"
+
+NETWORK_PASSPHRASE="Public Global Stellar Network ; September 2015"
+
+[DOCUMENTATION]
+ORG_NAME="XRP262"
+ORG_URL="https://xrp-262.vercel.app"
+ORG_DESCRIPTION="XRP262 is a Stellar-based issued asset with a total stated supply of 899,573,973,192 XRP262. The asset is issued on the Stellar network by the account GCGVZEE7RD2BFF2EIQUT37DYJUR7WDCQ2KWA5LUWYATRFLKEYHMJ3XRP. The official XRP262 website provides project information, asset documentation, and applicable terms."
+ORG_OFFICIAL_EMAIL="contact@xrp-262.vercel.app"
+ORG_SUPPORT_EMAIL="support@xrp-262.vercel.app"
+
+[PRINCIPALS]
+name="XRP262"
+email="contact@xrp-262.vercel.app"
+
+[[CURRENCIES]]
+code="XRP262"
+issuer="GCGVZEE7RD2BFF2EIQUT37DYJUR7WDCQ2KWA5LUWYATRFLKEYHMJ3XRP"
+name="XRP262"
+desc="XRP262 is an issued Stellar asset with a stated total supply of 899,573,973,192 XRP262. XRP262 is an independently issued asset and is XRP, the native asset of the XRP Ledger. Users should independently verify the issuer account, asset code, supply, distribution, and applicable terms before acquiring or transferring XRP262."
+conditions="Holding or transferring XRP262 by itself constitute a claim on the issuer or any underlying asset unless expressly stated in separately published documentation. No representation is made in this metadata regarding market value, liquidity, redemption, or future performance."
+status="live"
+is_asset_anchored=false
+display_decimals=7
+image="https://xrp-262.vercel.app/logo.png"
+fixed_number=899573973192
+
